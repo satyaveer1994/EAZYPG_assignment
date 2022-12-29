@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 let userSchema = new mongoose.Schema(
   {
     name: {
@@ -17,11 +16,11 @@ let userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    
+
     isDeleted: {
       type: Boolean,
-      default: false
-  },
+      default: false,
+    },
   },
   { timestamps: true }
 );

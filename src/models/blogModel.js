@@ -21,27 +21,26 @@ const blogModel = new mongoose.Schema(
       required: "category is required",
     },
     likes: {
-        type: [
-          {
-            type: mongoose.Schema.ObjectId,
-            ref: "user",
-          },
-        ],
-        default: [],
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-      },
-      comments: [
+      type: [
         {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Comment",
+          type: mongoose.Schema.ObjectId,
+          ref: "user",
         },
       ],
-    
+      default: [],
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    comments: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment",
+      },
+    ],
+
     isDeleted: { type: Boolean, default: false },
-   
   },
   { timestamps: true }
 );
